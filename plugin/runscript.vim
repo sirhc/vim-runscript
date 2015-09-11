@@ -28,6 +28,6 @@ function! BangPath(...)
 endfunction
 
 function! RunScript(...)
-    let l:pager = !empty($VIMPAGER) ? $VIMPAGER : "less"
+    let l:pager = !empty($VIMPAGER) ? $VIMPAGER : "less -r"
     exe '!clear; ' . BangPath('/bin/sh') . ' ' . join(a:000, ' ') . ' "%" 2>&1 | ' . l:pager
 endfunction
